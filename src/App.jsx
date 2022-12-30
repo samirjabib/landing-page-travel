@@ -1,11 +1,17 @@
-import { } from './components'
+import { Footer, Hero, ImageSlider, Navbar, Ofters, Plan, Rooms} from './components'
 
 
 function App() {
 
   return (
     <div className="App">
-      <h1 className="bg-black">Hello world</h1>
+      {/* <Navbar/> */}
+      <Hero/>
+      {/* <Ofters/>
+      <Plan/>
+      <Rooms/>
+      <ImageSlider/>
+      <Footer/> */}
     </div>
   )
 }
