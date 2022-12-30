@@ -30,6 +30,7 @@ export const Plan = () => {
                 />
             </div>
 
+            {/* right side */}
             <div className='flex flex-col h-full justify-center'>
                 <h3 className='text-5xl md:text-6xl font-bold'>Plan Your Next Trip</h3>
                 <p className='text-2xl py-6'>
