@@ -6,6 +6,7 @@ import { useState } from 'react';
 export const ImageSlider = () => {
 
     const [ currentIndex, setCurrentIndex ] = useState(0);
+    console.log(currentIndex)
 
     const slides = [
         {
@@ -26,13 +27,29 @@ export const ImageSlider = () => {
         },
       ];
 
+      const prevSlide = () => {
+        const isFirstSlide = currentIndex === 0;
+        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+        setCurrentIndex(newIndex);
+      }
+
+      const nextSlide = () => {
+        const isLastSlide = currentIndex === slides.length -1;
+        const newIndex = isLastSlide ? 0 : currentIndex +1;
+        setCurrentIndex(newIndex);
+      }
+
+      const goToSlide = (slideIndex) => {
+        setCurrentIndex(slideIndex)
+      }
+
 
     return(
         <div className='max-w-7xl h-[35rem] w-full m-auto py-16 px-4 relative group'>
             {/* images background */}
             <div
                 className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
-                style={{backgroundImage:`url${slides[currentIndex].url}`}}
+                style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
             >
 
             </div>
@@ -43,7 +60,7 @@ export const ImageSlider = () => {
             >
                 <BsChevronCompactLeft 
                     size={30}
-                    onClick={''}
+                    onClick={prevSlide}
                 />
             </div>
             
@@ -53,7 +70,7 @@ export const ImageSlider = () => {
             > 
                 <BsChevronCompactRight 
                         size={30}
-                        onClick={''}
+                        onClick={nextSlide}
                 />
             </div>
 
@@ -64,7 +81,7 @@ export const ImageSlider = () => {
                             <div
                                 className='text-2xl cursor-pointer'
                                 key={slideIndex}
-                                onClick={ () => console.log('click')}
+                                onClick={ () =>goToSlide(slideIndex)}
                             >
                                 <RxDotFilled/>
                             </div>
