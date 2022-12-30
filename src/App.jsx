@@ -7,8 +7,9 @@ function App() {
     <div className="App">
       <Navbar/>
       <Hero/>
-      {/* <Ofters/>
+      <Ofters/>
       <Plan/>
+      {/* 
       <Rooms/>
       <ImageSlider/>
       <Footer/> */}
