@@ -9,9 +9,9 @@ function App() {
       <Hero/>
       <Ofters/>
       <Plan/>
-      {/* 
       <Rooms/>
       <ImageSlider/>
+      {/* 
       <Footer/> */}
     </div>
   )
